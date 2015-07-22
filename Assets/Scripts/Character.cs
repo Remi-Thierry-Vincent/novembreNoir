@@ -53,8 +53,11 @@ namespace decembreNoir
 		// update fixed at 50times per sec
 		protected void FixedUpdate()
 		{
-			// climb speed to beupdated
-			// asociation with jump to be managed (climb = pas sauter)
+			
+			updateMovementInputs ();
+
+			// TODO climb speed to beupdated
+			// TODO asociation with jump to be checked (climb = pas sauter)
 			updateClimb (maxForwardSpeed);
 
 			if (!jumpCollision)
@@ -87,7 +90,6 @@ namespace decembreNoir
 			//if (Input.GetButtonDown("Jump") && grounded)
 			//	jumpWanted = true;
 
-			updateMovementInputs ();
 
 			if (nbJump < maxNbJump && jumpInput && !jumpKeyDown)
 			{
@@ -158,8 +160,12 @@ namespace decembreNoir
 
 		}
 
+		// Virtual method in which the movement of the character is updated
 		protected virtual void updateMovementInputs ()
 		{
+			horizontalInput = 0;
+			verticalInput = 0;
+			jumpInput = false;
 		}
 
 		protected virtual void updateOrientation()

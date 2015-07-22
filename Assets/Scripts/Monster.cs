@@ -33,7 +33,7 @@ namespace decembreNoir
 				ia = new Pathfing();
 				ia.objectif = currentlevel.doors[new System.Random().Next(currentlevel.doors.Count)];
 				ia.parent = this;
-				ia.finish = arriveToTarget;
+				ia.finish = arriveToTarget;	
 				ia.OnStart();
 			}
 		}

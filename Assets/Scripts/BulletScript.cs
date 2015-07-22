@@ -29,6 +29,13 @@ namespace decembreNoir
 					print("find monster!");
 					monster.shoot(1);
 				}
+
+				Ledon ledon =  rigidBody.GetComponent<Ledon>();
+				if (ledon != null)
+				{
+					print ("shoot ledon");
+					ledon.shoot (1);
+				}
 			}
 			Destroy(this.gameObject);
 		}
